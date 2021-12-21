@@ -5,7 +5,7 @@ In this demo project you may examples of reactive endpoints built on top of Spri
 2. A detailed analyse of threading and concurrency model used by Spring WebFlux and Reactor Netty. It also threats about `WebClient` and Spring Boot Actuator pooling. A detailed description can be found here: [A Deep Dive Into Spring WebFlux Threading Model](https://piotrminkowski.com/2020/03/30/a-deep-dive-into-spring-webflux-threading-model/)
 
 
-``$ docker run -d --name webflux --cpus="1" -p 8080:8080 piomin/sample-spring-webflux`
+`$ docker run -d --name webflux --cpus="1" -p 8080:8080 piomin/sample-spring-webflux`
 
 ### Guide
 
