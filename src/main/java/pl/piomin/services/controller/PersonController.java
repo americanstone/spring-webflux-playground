@@ -5,6 +5,7 @@ import java.util.stream.Stream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import pl.piomin.services.model.Person;
 import reactor.core.publisher.Flux;
 import reactor.core.scheduler.Schedulers;
@@ -22,8 +23,10 @@ import org.springframework.web.reactive.function.client.WebClient;
 @RequestMapping("/persons")
 public class PersonController {
 
+    @Qualifier("myTaskExecutor")
     @Autowired
     ThreadPoolTaskExecutor taskExecutor;
+
     @Autowired
     WebClient client;
 
@@ -91,5 +94,4 @@ public class PersonController {
                     .publishOn(Schedulers.fromExecutor(taskExecutor))
             );
     }
-
 }

@@ -1,5 +1,6 @@
 package pl.piomin.services;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,6 +24,7 @@ public class SampleSpringWebFluxApp {
         SpringApplication.run(SampleSpringWebFluxApp.class, args);
     }
 
+    @Qualifier("myTaskExecutor")
     @Bean
     public ThreadPoolTaskExecutor taskExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
